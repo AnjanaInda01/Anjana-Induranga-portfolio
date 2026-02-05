@@ -167,7 +167,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 text-center space-y-4">
           <h3 className="text-lg font-semibold">Anjana Induranga Nanayakkara</h3>
           <p className="text-sm opacity-70">
-            Full Stack Developer & DevOps Enginner
+            Full Stack Developer & DevOps Explore
           </p>
 
           <p className="text-xs opacity-50 pt-4">
