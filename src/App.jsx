@@ -165,7 +165,7 @@ function App() {
       {/* Footer */}
       <footer className="border-t dark:border-dark-border light:border-light-border py-12">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-4">
-          <h3 className="text-lg font-semibold">Anjana Induranga</h3>
+          <h3 className="text-lg font-semibold">Anjana Induranga </h3>
           <p className="text-sm opacity-70">
             Full Stack Developer & DevOps Engineer
           </p>
