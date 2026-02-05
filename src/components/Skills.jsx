@@ -3,34 +3,66 @@ import { Icon } from "@iconify/react";
 
 const skillCategories = [
   {
+    title: "Frontend Development",
+    skills: [
+      { name: "React", icon: "mdi:react", color: "bg-blue-500" },
+      { name: "Tailwind CSS", icon: "mdi:tailwind", color: "bg-cyan-500" },
+      { name: "HTML5", icon: "mdi:language-html5", color: "bg-orange-500" },
+      { name: "CSS3", icon: "mdi:language-css3", color: "bg-blue-600" },
+    ],
+  },
+  {
     title: "Backend Development",
     skills: [
-      { name: "PHP", icon: "logos:php", color: "bg-purple-600" },
-      { name: "JavaScript", icon: "logos:javascript", color: "bg-yellow-400" },
-      { name: "MySQL", icon: "logos:mysql", color: "bg-blue-500" },
+      { name: "Node.js", icon: "mdi:nodejs", color: "bg-green-600" },
+      {
+        name: "Express.js",
+        icon: "simple-icons:express",
+        color: "bg-gray-700",
+      },
+      {
+        name: "Spring Boot",
+        icon: "simple-icons:springboot",
+        color: "bg-green-700",
+      },
+      { name: "Java EE", icon: "mdi:language-java", color: "bg-red-600" },
     ],
   },
   {
-    title: "Code Management / Collaboration",
+    title: "Programming Languages",
     skills: [
-      { name: "Git", icon: "logos:git-icon", color: "bg-red-600" },
-      { name: "GitHub", icon: "logos:github-icon", color: "bg-gray-700" },
-      { name: "GitLab", icon: "logos:gitlab", color: "bg-orange-600" },
+      {
+        name: "JavaScript",
+        icon: "mdi:language-javascript",
+        color: "bg-yellow-500",
+      },
+      { name: "Java", icon: "mdi:language-java", color: "bg-red-500" },
+      { name: "Dart", icon: "simple-icons:dart", color: "bg-blue-400" },
+      { name: "Flutter", icon: "simple-icons:flutter", color: "bg-cyan-600" },
     ],
   },
   {
-    title: "Mobile / API Development",
+    title: "Databases & APIs",
     skills: [
-      { name: "Python", icon: "logos:python", color: "bg-yellow-500" },
-      { name: "Django", icon: "logos:django", color: "bg-green-700" },
-      { name: "REST APIs", icon: "mdi:api", color: "bg-gray-600" },
+      { name: "MySQL", icon: "simple-icons:mysql", color: "bg-blue-600" },
+      { name: "MongoDB", icon: "simple-icons:mongodb", color: "bg-green-600" },
+      { name: "REST API", icon: "mdi:api", color: "bg-gray-600" },
+      { name: "Postman", icon: "simple-icons:postman", color: "bg-orange-500" },
     ],
   },
   {
-    title: "Multiple Frameworks / Languages",
+    title: "Tools & DevOps",
     skills: [
-      { name: "Flutter", icon: "logos:flutter", color: "bg-cyan-500" },
-      { name: "Dart", icon: "logos:dart", color: "bg-teal-500" },
+      { name: "Git", icon: "simple-icons:git", color: "bg-orange-600" },
+      { name: "GitHub", icon: "mdi:github", color: "bg-gray-800" },
+      { name: "Docker", icon: "simple-icons:docker", color: "bg-blue-500" },
+      { name: "VS Code", icon: "mdi:visual-studio-code", color: "bg-blue-600" },
+      { name: "NPM", icon: "simple-icons:npm", color: "bg-red-600" },
+      {
+        name: "Firebase",
+        icon: "simple-icons:firebase",
+        color: "bg-yellow-500",
+      },
     ],
   },
 ];
@@ -44,59 +76,42 @@ const Skills = () => {
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-2">
-            My Skills
-          </h2>
-          <p className="text-sm opacity-50">
-            Technologies I work with
-          </p>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-semibold mb-2">My Skills</h2>
+          <p className="text-sm opacity-50">Technologies & Tools I Work With</p>
         </div>
 
-        {/* Skill Categories */}
-        <div className="space-y-8 sm:space-y-12">
-          {skillCategories.map((category, categoryIndex) => (
+        {/* Categories */}
+        <div className="space-y-12">
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={categoryIndex}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Category title */}
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary" />
-                </div>
-                <h3 className="text-xs sm:text-sm font-semibold opacity-70">
-                  {category.title}
-                </h3>
-              </div>
+              <h3 className="text-sm font-semibold mb-4 opacity-70">
+                {category.title}
+              </h3>
 
-              {/* Skills grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                {category.skills.map((skill, skillIndex) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {category.skills.map((skill, i) => (
                   <motion.div
-                    key={skillIndex}
+                    key={i}
                     whileHover={{ scale: 1.05, y: -4 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center justify-center p-4 sm:p-6
-                    rounded-xl dark:bg-dark-card light:bg-light-card
-                    hover:shadow-lg transition-all"
+                    className="flex flex-col items-center p-5 rounded-xl
+                    dark:bg-dark-card light:bg-light-card shadow-sm"
                   >
                     <div
-                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${skill.color}
-                      flex items-center justify-center mb-2 sm:mb-3 shadow-md`}
+                      className={`w-12 h-12 rounded-lg ${skill.color}
+                      flex items-center justify-center mb-3`}
                     >
-                      <Icon
-                        icon={skill.icon}
-                        className="w-6 h-6 sm:w-7 sm:h-7"
-                      />
+                      <Icon icon={skill.icon} className="w-7 h-7 text-white" />
                     </div>
 
-                    <span className="text-[10px] sm:text-xs font-semibold text-center leading-tight">
+                    <p className="text-xs font-semibold text-center">
                       {skill.name}
-                    </span>
+                    </p>
                   </motion.div>
                 ))}
               </div>
